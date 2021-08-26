@@ -81,7 +81,7 @@ import com.proyect.demo.modelo.Titulos;
 import com.proyect.demo.modelo.Usuario;
 
 @Controller
-@RequestMapping
+@RequestMapping("/Admin")
 public class AControlador {
 
 	@Autowired

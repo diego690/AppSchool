@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>List Administrador</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container mt-4">
+
+		<div class="col-ms-6">
+			<form th:action="@{/saveadministrador}" th:object="${administrador}" method="POST">
+				<div class="card">
+					<div class="card-header">
+						<h3>Ingresar Administrador</h3>
+					</div>
+					<div class="card-body">
+						<div class="form-group">
+							<lable>Id Persona:</lable>
+							<tr th:each="persona: ${persona}">
+							<select class="form-select" th:field="*{idpersona}" aria-label="Default select example">
+								<option selected>Open this select menu</option>
+								<option value="${persona.idpersona}">${persona.nombres} + ${persona.apelliodos}</option>
+							</select>
+							</tr>
+						</div>
+						<div class="form-group">
+							<lable>Id Usuario:</lable>
+							<tr th:each="usuario: ${usuario}">
+							<select class="form-select" th:field="*{idusuario}" aria-label="Default select example">
+								<option selected>Open this select menu</option>
+								<option value="${usuario.idusuario}">${usuario.cuenta}</option>
+							</select>
+							</tr>
+						</div>
+					</div>
+					<div class="card-footer">
+						<input type="submit" value="Guardar" class="btn btn-success" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

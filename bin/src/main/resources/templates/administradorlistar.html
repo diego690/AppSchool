@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Administrador</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+<a th:href="@{/newadministrador}" class="btn btn-primary">Nuevo</a>
+    <div>
+        <h1>List of Administrador</h1>
+    </div>
+     
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID ADMINISTRADOR</th>
+                    <th>ID PERSONA</th>
+                    <th>ID USUARIO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="administrador: ${administrador}">
+                    <td th:text="${administrador.idadministrador}"></td>
+                    <td th:text="${administrador.idpersona}"></td>
+                    <td th:text="${administrador.idusuario}"></td>
+                    <td>
+                    <a th:href="@{/editaradministrador/}+${administrador.idadministrador}" class="btn btn-warning">Editar</a>
+                    <a th:onclick="eliminaradministrador([[${administrador.idadministrador}]])" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a th:href="@{/index}">Atras</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="/funcionesAdministrador.js"></script>
+</body>
+</html> 
