@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Aulas</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container mt-4">
+
+	<div class="col-ms-6">
+		<form th:action="@{/savenivel}" th:object="${nivel}" method="POST">
+			<div class="card">
+				<div class="card-header">
+					<h3>Ingresar Aula</h3>
+				</div>
+				<div class="card-body">
+					<div class="form-group">
+						<lable>Id Nivel:</lable>
+						<input th:field="*{idnivel}" type="text" class="form-control" readonly="readonly"/>
+					</div>
+					<div class="form-group">
+						<lable>Grado:</lable>
+						<input th:field="*{grado}" type="text" class="form-control"/>
+					</div>
+					
+				</div>
+				<div class="card-footer">
+					<input type="submit" value="Guardar" class="btn btn-success" />
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+</html>
